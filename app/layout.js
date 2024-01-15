@@ -1,17 +1,25 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Sidenav from "./components/Sidenav";
 
 export const metadata = {
-  title: 'admin dashboard',
-  description: 'test project',
-}
+  title: "admin dashboard",
+  description: "test project",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=" bg-slate-100">
+        <Navbar />
+        <div className=" flex">
+          <Sidenav />
+
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
